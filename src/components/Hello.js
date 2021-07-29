@@ -15,8 +15,8 @@ export default class Hello extends React.Component {
 
         // set @CrossOrigin(origins = "*") in controllers in spring boot app 
         // ! hardcoded url, see pom.xml "proxy" 
-        // axios.get('http://localhost:8084/Employee')
-        axios.get('/Employee')
+        axios.get('http://localhost:8084/Employee')
+        // axios.get('/Employee')
             .then(
                 (response) => {
                     let employee = response.data;
@@ -36,12 +36,12 @@ export default class Hello extends React.Component {
     render() {
         return (
             <div>
-                <p> {this.state.employee.map( (emp) => { return  <p>{emp.id}</p> } ) } </p>
+                {/* <p> {this.state.employee.map( (emp) => { return  <p>{emp.id}</p> } ) } </p>
                 <p> {this.state.employee.map( (emp) => { return  <p>{emp.name}</p> } ) } </p>
-                <p> {this.state.employee.map( (emp) => { return  <p>{emp.salary}</p> } ) } </p>
+                <p> {this.state.employee.map( (emp) => { return  <p>{emp.salary}</p> } ) } </p> */}
 
                 <ul>
-                    {this.state.employee.map(employee => { return <p>{employee.name + ' ' + employee.id + ' ' + employee.salary}</p> })}
+                    {this.state.employee.map(employee => { return <p>{employee.ename + ' ' + employee.eid + ' ' + employee.salary}</p> })}
                 </ul>
             </div>
         )
